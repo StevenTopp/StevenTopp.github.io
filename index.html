@@ -2,13 +2,14 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Show Image Demo</title>
 
 <style>
     body {
         margin: 0;
         padding: 0;
-        font-family: Arial;
+        font-family: Arial, sans-serif;
         background: #1e1e1e;
         color: white;
         text-align: center;
@@ -17,15 +18,16 @@
 
     #myImg {
         width: 320px;
+        max-width: 90%; /* 适配移动端，防止溢出 */
         border-radius: 12px;
         display: none;   /* 默认不显示 */
-        margin-top: 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        transition: 0.4s;
+        transition: all 0.4s ease;
     }
 
     #myImg.show {
         display: block;
+        margin: 20px auto; /* 确保块级元素水平居中 */
         animation: fadeIn 0.8s ease;
     }
 
@@ -38,11 +40,16 @@
         background: #4caf50;
         color: white;
         transition: 0.3s;
+        outline: none;
     }
 
     button:hover {
         background: #45a049;
         transform: scale(1.05);
+    }
+
+    button:active {
+        transform: scale(0.95);
     }
 
     @keyframes fadeIn {
@@ -58,12 +65,15 @@
 
 <button onclick="showImage()">Open</button>
 
-<!-- 你的图片 URL -->
-<img id="myImg" src="https://StevenTopp.github.io/ym.jpg" alt="My Image">
+<img id="myImg" src="./ym.jpg" alt="Yang Mi">
 
 <script>
 function showImage() {
-    document.getElementById("myImg").classList.add("show");
+    var img = document.getElementById("myImg");
+    // 简单的切换逻辑，如果已经显示则不重复添加类
+    if (!img.classList.contains("show")) {
+        img.classList.add("show");
+    }
 }
 </script>
 
