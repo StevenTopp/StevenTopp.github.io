@@ -1,3 +1,9 @@
+---
+layout: page
+title: "BitNet Distillation 论文翻译"
+permalink: /notes/bitnetdistillation/
+---
+
 # BitNet Distillation 论文翻译
 
 ---

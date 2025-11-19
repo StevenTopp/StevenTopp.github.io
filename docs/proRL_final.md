@@ -1,3 +1,9 @@
+---
+layout: page
+title: "ProRL：延时强化学习笔记"
+permalink: /notes/prorl/
+---
+
 GRPO 或 PPO 并不直接优化 $J(\theta)$，而是优化一个 surrogate objective：
 
 $$
