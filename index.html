@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Show Image Demo</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial;
+        background: #1e1e1e;
+        color: white;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    #myImg {
+        width: 320px;
+        border-radius: 12px;
+        display: none;   /* 默认不显示 */
+        margin-top: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: 0.4s;
+    }
+
+    #myImg.show {
+        display: block;
+        animation: fadeIn 0.8s ease;
+    }
+
+    button {
+        padding: 12px 28px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #4caf50;
+        color: white;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #45a049;
+        transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9);}
+        to { opacity: 1; transform: scale(1);}
+    }
+</style>
+
+</head>
+<body>
+
+<h1>点击按钮展示图片</h1>
+
+<button onclick="showImage()">Open</button>
+
+<!-- 你的图片 URL -->
+<img id="myImg" src="https://StevenTopp.github.io/ym.jpg" alt="My Image">
+
+<script>
+function showImage() {
+    document.getElementById("myImg").classList.add("show");
+}
+</script>
+
+</body>
+</html>
