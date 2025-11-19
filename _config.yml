@@ -1,0 +1,18 @@
+title: Steven 的个人博客
+description: "记录学习总结、电影推荐与美图欣赏"
+lang: zh-CN
+
+# 使用 GitHub Pages 默认支持的 minima 主题
+# 不额外配置插件，保持简单稳定
+theme: minima
+
+# 时区设置，日期显示会用到
+timezone: Asia/Shanghai
+
+# 顶部导航中显示的页面（按顺序）
+header_pages:
+  - index.html
+  - notes.md
+  - movies.md
+  - gallery.md
+  - about.md

@@ -1,81 +1,78 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Show Image Demo</title>
+---
+layout: home
+title: Steven 的个人博客
+---
+
+<div class="home-intro">
+  <p class="lead">欢迎来到我的个人空间。</p>
+  <p class="lead">这里会记录我的学习总结、电影推荐和一些美图欣赏。</p>
+</div>
+
+<div class="home-cards">
+  <a class="card" href="{{ '/notes/' | relative_url }}">
+    <h3>学习总结</h3>
+    <p>论文、项目、技术笔记集中地。</p>
+  </a>
+  <a class="card" href="{{ '/movies/' | relative_url }}">
+    <h3>电影推荐</h3>
+    <p>记录打动过我的电影与片段。</p>
+  </a>
+  <a class="card" href="{{ '/gallery/' | relative_url }}">
+    <h3>美图欣赏</h3>
+    <p>放松一下，看点好看的图片。</p>
+  </a>
+</div>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: #1e1e1e;
-        color: white;
-        text-align: center;
-        padding-top: 80px;
-    }
+  .home-intro {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-    #myImg {
-        width: 320px;
-        max-width: 90%; /* 适配移动端，防止溢出 */
-        border-radius: 12px;
-        display: none;   /* 默认不显示 */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        transition: all 0.4s ease;
-    }
+  .home-intro .lead {
+    margin: 0.2rem 0;
+    color: #555;
+  }
 
-    #myImg.show {
-        display: block;
-        margin: 20px auto; /* 确保块级元素水平居中 */
-        animation: fadeIn 0.8s ease;
-    }
+  .home-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
 
-    button {
-        padding: 12px 28px;
-        font-size: 18px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        background: #4caf50;
-        color: white;
-        transition: 0.3s;
-        outline: none;
-    }
+  .home-cards .card {
+    flex: 1 1 220px;
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid #e2e2e2;
+    text-decoration: none;
+    color: inherit;
+    background: #fafafa;
+    transition: box-shadow .2s ease, transform .2s ease, background .2s ease;
+  }
 
-    button:hover {
-        background: #45a049;
-        transform: scale(1.05);
-    }
+  .home-cards .card:hover {
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+  }
 
-    button:active {
-        transform: scale(0.95);
-    }
+  .home-cards .card h3 {
+    margin-top: 0;
+    margin-bottom: .4rem;
+  }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.9);}
-        to { opacity: 1; transform: scale(1);}
+  .home-cards .card p {
+    margin: 0;
+    font-size: .9rem;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .home-cards {
+      flex-direction: column;
     }
+  }
 </style>
 
-</head>
-<body>
-
-<h1>点击按钮展示图片</h1>
-
-<button onclick="showImage()">Open</button>
-
-<img id="myImg" src="./ym.jpg" alt="Yang Mi">
-
-<script>
-function showImage() {
-    var img = document.getElementById("myImg");
-    // 简单的切换逻辑，如果已经显示则不重复添加类
-    if (!img.classList.contains("show")) {
-        img.classList.add("show");
-    }
-}
-</script>
-
-</body>
-</html>
